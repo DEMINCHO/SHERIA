@@ -1,0 +1,260 @@
+﻿@*@section PageStyles{
+    <link href="~/assets/static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="~/assets/static/css/pretty-checkbox.min.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/bootstrap-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/choices/css/choices.min.css" rel="stylesheet" />
+}
+<!-- begin page-header -->
+<h1 class="page-header"><i class="fa-solid fa-store"></i> Business Central <small> Businesses </small></h1>
+<!-- end page-header -->
+<div class="panel panel-inverse" id="main_panel">
+    <div class="panel-heading">
+        <div class="panel-heading-btn">
+            <a href="@Url.Action("Businesses", "BusinessCentral")" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+            <a href="@Url.Action("Index", "Dashboard")" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+        </div>
+        <h4 class="panel-title">Businesses</h4>
+    </div>
+    <div class="panel-body">
+        <p></p>
+        <div class="form-horizontal">
+            <div class="row">
+                <a id="businessesdatatable_new" class="btn btn-sm btn-success" data-toggle="modal" data-target="#capture-record">
+                    <i class="fa fa-plus-circle"></i> Add New
+                </a>
+                <br />
+                <br />
+            </div>
+            <div class="row">
+                <table id="businessesdatatable" class="table table-striped table-hover table-bordered table-condensed">
+                    <thead>
+                        <tr role="row">
+                            <th style="width:auto">Business Name</th>
+                            <th style="width:auto">PIN</th>
+                            <th style="width:auto">Inspected</th>
+                            <th style="width:auto"></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="modal fade" id="capture-record" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
+                                    <h4 class="modal-title">Capture Business</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5><b>1. Basic Information</b></h5>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <input id="recordid" type="hidden" name="recordid" />
+                                            <label class="form-control-label" for="business_name">Business Name</label>
+                                            <input id="business_name" type="text" name="business_name" class="form-control" placeholder="Enter Business Name" />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label class="form-control-label" for="pin_number">Business PIN</label>
+                                            <input id="pin_number" type="text" name="pin_number" class="form-control" placeholder="Enter Business PIN" />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label class="form-control-label" for="date_of_incorporation">Date Of Incorporation</label>
+                                            <div class="input-group date">
+                                                <input id="date_of_incorporation" type="text" name="date_of_incorporation" class="form-control" placeholder="Enter Date Of Incorporation" data-date-format="dd-mmm-yyyy" />
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label class="form-control-label" for="cert_of_incorporation">Certificate Of Incorporation</label>
+                                            <input id="cert_of_incorporation" type="text" name="cert_of_incorporation" class="form-control" placeholder="Enter Cert No." />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label class="form-control-label" for="tax_compliance_number">Tax Compliance Certificate Number</label>
+                                            <input id="tax_compliance_number" type="text" name="tax_compliance_number" class="form-control" placeholder="Enter Tax Compliance No." />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label class="form-control-label" for="business_activities">Business Activities</label>
+                                            <div id="select_div">
+                                                <select id="business_activities" name="business_activities" placeholder="Select business activities" multiple>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="form-control-label" for="remarks">Remarks</label>
+                                            <textarea id="remarks" rows="3" name="remarks" class="form-control" placeholder="Enter Remarks"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <br />
+                                    </div>
+                                    <h5><b>2. Contact Information</b></h5>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <label for="business_email">Email</label>
+                                            <input type="text" id="business_email" name="business_email" class="form-control" placeholder="Enter Email" />
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <label for="telephone_number">Telephone Number</label>
+                                            <input type="text" id="telephone_number" name="telephone_number" class="form-control" placeholder="Enter Telephone Number" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <label class="form-control-label" for="postal_address">Postal Address</label>
+                                            <textarea id="postal_address" rows="3" name="postal_address" class="form-control" placeholder="Enter Postal Address"></textarea>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <label class="form-control-label" for="physical_address">Physical Address</label>
+                                            <textarea id="physical_address" rows="3" name="physical_address" class="form-control" placeholder="Enter Physical Address"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <br />
+                                    </div>
+                                    <h5><b>3. Location</b></h5>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="sub_county">Sub County</label>
+                                            <select id="sub_county" name="sub_county" class="form-control selectpicker" style="width: 100%"></select>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="ward">Ward</label>
+                                            <select id="ward" name="ward" class="form-control selectpicker" style="width: 100%"></select>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="road">Road / Street</label>
+                                            <input type="text" id="road" name="road" class="form-control" placeholder="Enter Road / Street" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="plot_number">Plot Number</label>
+                                            <input type="text" id="plot_number" name="plot_number" class="form-control" placeholder="Enter Plot Number" />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="building">Building</label>
+                                            <input type="text" id="building" name="building" class="form-control" placeholder="Enter Building" />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="floor_number">Floor Number</label>
+                                            <input type="text" id="floor_number" name="floor_number" class="form-control" placeholder="Enter Floor Number" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="room_number">Room Number</label>
+                                            <input type="text" id="room_number" name="room_number" class="form-control" placeholder="Enter Room Number" />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <br />
+                                    </div>
+                                    <h5><b>4. Contact Person</b></h5>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="contact_person_full_name">Contact Person Full Name</label>
+                                            <input type="text" id="contact_person_full_name" name="contact_person_full_name" class="form-control" placeholder="Enter Full Name" />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="contact_person_email">Contact Person Email</label>
+                                            <input type="text" id="contact_person_email" name="contact_person_email" class="form-control" placeholder="Enter Email" />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="contact_person_phone_number">Contact Person Phone Number</label>
+                                            <input type="text" id="contact_person_phone_number" name="contact_person_phone_number" class="form-control" placeholder="Enter Phone Number" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="contact_person_id_number">Contact Person ID Number</label>
+                                            <input type="text" id="contact_person_id_number" name="contact_person_id_number" class="form-control" placeholder="Enter ID Number" />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="contact_person_relationship">Contact Person Relationship</label>
+                                            <input type="text" id="contact_person_relationship" name="contact_person_relationship" class="form-control" placeholder="Enter Relationship" />
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label for="contact_person_postal_address">Contact Person Postal Address</label>
+                                            <input type="text" id="contact_person_postal_address" name="contact_person_postal_address" class="form-control" placeholder="Enter Postal Address" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="contact_person_physical_address">Contact Person Physical Address</label>
+                                            <textarea id="contact_person_physical_address" rows="3" name="contact_person_physical_address" class="form-control" placeholder="Enter Physical Address"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn btn-white btn-sm" id="cancel" data-dismiss="modal"><i class="fa fa-times-circle"></i>&nbsp;Cancel</a>
+                                    <a href="#" class="btn btn-success btn-sm" id="save"><i class="fa fa-save"></i>&nbsp;Save</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="modal fade" id="capture-record-I" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
+                                    <h4 class="modal-title">
+                                        <label class="widget-caption" id="business_permits_title"></label>
+                                    </h4>
+                                </div>
+                                <div class="modal-body">
+                                    <table id="businesspermitsdatatable" class="table table-striped table-hover table-bordered table-condensed">
+                                        <thead>
+                                            <tr role="row">
+                                                <th style="width:auto">Valid From</th>
+                                                <th style="width:auto">Valid To</th>
+                                                <th style="width:auto"></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!-- end panel-body -->
+</div>
+<!-- end panel -->
+@section PageScripts{
+    <script src="~/assets/static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/assets/static/plugins/select2/dist/js/select2.min.js"></script>
+    <script src="~/assets/static/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+    <script src="~/assets/static/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/assets/static/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/assets/static/plugins/choices/js/choices.min.js"></script>
+    <script src="~/assets/static/js/adhoc/table-manage-responsive.demo.min.js"></script>
+    <script src="~/assets/static/plugins/bootstrap-sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="~/assets/static/js/adhoc/apps.min.js"></script>
+    <script src="~/assets/static/js/business-central/businesses.js"></script>
+}*@

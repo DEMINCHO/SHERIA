@@ -1,0 +1,70 @@
+﻿@section PageStyles{
+
+    <link href="~/assets/static/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="~/assets/static/css/pretty-checkbox.min.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/bootstrap-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="~/assets/static/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" />
+    @*<link href="~/assets/static/css/calender.css" rel="stylesheet" />*@
+
+}
+<!-- begin page-header -->
+<h1 class="page-header"><i class="fas fa-box-open"></i> Tasks <small> Task Calender </small></h1>
+<!-- end page-header -->
+<div class="panel panel-inverse">
+    <div class="panel-heading">
+        <div class="panel-heading-btn">
+            <a href="@Url.Action("TaskCalender", "TasksManagement")" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fas fa-undo"></i></a>
+            <a href="@Url.Action("Index", "Dashboard")" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+        </div>
+        <h4 class="panel-title">Tasks </h4>
+    </div>
+    <div class="panel-body">
+        <p></p>
+        <div class="main" style="display: flex;">
+            <div style="">
+                <div id="nav"></div>
+            </div>
+            <div style="flex-grow: 1; margin-left: 10px;">
+                <div class="navi">
+                    <button id="previous">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">@*
+                            <use href="~/assets/icons/daypilot.svg#minichevron-left-2"></use>*@
+                            @*<img src="~/assets/icons/daypilot.svg" />*@
+                        </svg>
+                    </button>
+                    <button id="today" class="highlighted">Today</button>
+                    <button id="next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">@*
+                            <use href="~/assets/icons/daypilot.svg#minichevron-right-2"></use>*@
+                        </svg>
+                    </button>
+                </div>
+                <div id="dp"></div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!-- end panel-body -->
+</div>
+<!-- end panel -->
+@section PageScripts{
+    <script src="~/assets/static/plugins/lib/daypilot/daypilot-all.min.js" asp-append-version="true"></script>
+    <script src="~/assets/static/js/task-management/events.js"></script>
+    <script src="~/assets/static/plugins/select2/dist/js/select2.min.js"></script>
+    <script src="~/assets/static/plugins/dataTables/media/js/jquery.dataTables.js"></script>
+    <script src="~/assets/static/plugins/dataTables/media/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/assets/static/plugins/dataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/assets/static/js/table-manage-responsive.demo.min.js"></script>
+    <script src="~/assets/static/plugins/bootstrap-sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="~/assets/static/js/apps.min.js"></script>
+    <script src="~/assets/static/js/jquery.blockUI.js"></script>
+
+
+    
+
+
+
+}
