@@ -706,7 +706,7 @@ namespace SHERIA.Controllers
             }
         }
 
-        [RBAC]
+        [HttpPost]
         public ActionResult Delete(/*[FromBody] JObject jobject*/int id, string module)
         {
             if (HttpContext.Session.GetString("name") == null)

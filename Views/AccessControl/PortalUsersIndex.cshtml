@@ -263,7 +263,7 @@
 
                                     $.ajax({
                                         url: "@Url.Action("Delete", "AccessControl")",
-                                        type: "GET",
+                                        type: "POST",
                                         data: parameters,
                                         beforeSend: function () {
                                             if (!$(a).hasClass("panel-loading")) {
@@ -283,7 +283,8 @@
                                                 icon: "success",
                                                 confirmButtonText: "Ok"
                                             });
-                                            getData(data);
+                                            GetUsers();
+                                            //getData(data);
                                         },
                                         error: function (xhr, textStatus, errorThrown) {
                                             $(a).removeClass("panel-loading"), $(a).find(".panel-loader").remove();

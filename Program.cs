@@ -6,7 +6,10 @@ using SHERIA.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddMvc().AddNewtonsoftJson();
 // Add services to the container.
+builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();

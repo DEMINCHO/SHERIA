@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SHERIA.Helpers;
@@ -59,8 +60,9 @@ namespace SHERIA.Controllers
         [HttpPost]
         [Route("SubmitSTKRequest")]
         // api/SubmitSTKRequest
-        public async Task<string> SendStkPush([FromBody] B2CRequestModel model)
+        public async Task<JToken> SendStkPush([FromBody] JObject jobject)
         {
+
             var token = await GetToken();
             iloggermanager.LogInfo("Mpesa token: " + Convert.ToString(token));
 
@@ -70,18 +72,25 @@ namespace SHERIA.Controllers
             iloggermanager.LogInfo("Mpesa STK End point: " + Convert.ToString(url));
 
             //string securityCredential = "fR8akwmLOS2Lk4jC3py85Sr9ggvGewSPPF66anJWOJmeVYO3rcJatpxr6wIdpo/UWfLt75IT++abtHfePcbTs+e+Cixmh0pmT4sQhDPeJUUkQePvR3tRlDGu1xsOyVz0r6QbG8ohN7IW4SnvQ2J/i88FqeHkiT0j0daJndtdqH7ccP6sdr6osMLITyzfArgLBc3ayhoagoV/gHpyLvLaUwEcpj2BO8SHBYE2peHwc82Zy6MUcRuM0d82YRuikTXsaRFei8M/O7H6KMk/xtL5sTvdCCBQH4d8aFfwEbuvILYUfi4npMQaFdc16s1WeyU46PXxB7qnDTU5G6tMVbQnYw==";
-            string external_ref_num = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            //string external_ref_num = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            string external_ref_num = DateTime.Now.ToString("yyyyMMddHHmmss");
+            string passkey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
+            string Shortcode = "174379";
+
+            string combination = Shortcode + passkey + external_ref_num;
+
+            string password = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(combination));
 
             var jsonBody = JsonConvert.SerializeObject(new
             {
                 BusinessShortCode = "174379",
-                Password = "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwMzA5MjExODMy",
-                Timestamp = "20250309211718",
+                Password = password,
+                Timestamp = external_ref_num,
                 TransactionType = "CustomerPayBillOnline",
-                Amount = "1",
-                PartyA = "254713249357",
+                Amount = jobject["amount"]!.ToString(),
+                PartyA = jobject["phone_no"]!.ToString(),
                 PartyB = 174379,
-                PhoneNumber = "254713249357",
+                PhoneNumber = jobject["phone_no"]!.ToString(),
                 CallBackURL = "https://mydomain.com/pat",
                 AccountReference = "Test",
                 TransactionDesc = "Test"

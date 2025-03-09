@@ -7,6 +7,9 @@ using static SHERIA.Helpers.CryptoHelper;
 using System.Collections;
 using System.Data;
 using static SHERIA.Controllers.ClientManagementController;
+using System.Net.Http;
+using System.Net.Mime;
+using System.Text;
 
 namespace SHERIA.Controllers
 {
@@ -15,12 +18,14 @@ namespace SHERIA.Controllers
         private IWebHostEnvironment ihostingenvironment;
         private ILoggerManager iloggermanager;
         private DBHandler dbhandler;
+        private HttpClient _httpClient;
 
-        public ManagementController(ILoggerManager logger, IWebHostEnvironment environment, DBHandler mydbhandler)
+        public ManagementController(ILoggerManager logger, IWebHostEnvironment environment, DBHandler mydbhandler, HttpClient httpClient)
         {
             iloggermanager = logger;
             ihostingenvironment = environment;
             dbhandler = mydbhandler;
+            _httpClient = httpClient;
         }
 
         public class matters_record
@@ -255,6 +260,43 @@ namespace SHERIA.Controllers
 
                 return GetRecords(module);
             }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DownloadAction(string amount, string mobile)
+        {
+            
+            // Process mobile number: remove spaces and keep only the last 9 digits
+            string cleanedMobile = new string(mobile.Where(char.IsDigit).ToArray());
+            string last9Digits = cleanedMobile.Length >= 9
+                ? cleanedMobile.Substring(cleanedMobile.Length - 9)
+                : cleanedMobile; // Fallback for numbers shorter than 9 digits
+            string phone_no = "254" + last9Digits;
+
+            // Process amount: remove spaces and decimals, ensure it's a whole number
+            string cleanedAmount = new string(amount.Where(char.IsDigit).ToArray());
+
+            string baseUrl = "https://localhost:44347/api/MpesaIntergration/SubmitSTKRequest";
+            iloggermanager.LogInfo("baseUrl: " + baseUrl);
+
+            JObject requestBody = new JObject
+            {
+                { "amount", cleanedAmount },
+                { "phone_no", phone_no } 
+            };
+            iloggermanager.LogInfo("requestBody: " + requestBody.ToString());
+
+            StringContent content = new StringContent(requestBody.ToString(), Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = await _httpClient.PostAsync(baseUrl, content);
+            string result = await response.Content.ReadAsStringAsync();
+            iloggermanager.LogInfo("RESULT: " + result);
+            JObject result_json = JObject.Parse(result);
+            iloggermanager.LogInfo("result_json: " + result_json);
+
+            return Ok();
+
+            
         }
 
     }

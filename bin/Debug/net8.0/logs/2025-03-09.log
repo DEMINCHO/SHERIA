@@ -6,3 +6,32 @@
 2025-03-09 21:32:16.4489 INFO STK payload request: {"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwMzA5MjExODMy","Timestamp":"20250309211718","TransactionType":"CustomerPayBillOnline","Amount":"1","PartyA":"254713249357","PartyB":174379,"PhoneNumber":"254713249357","CallBackURL":"https://mydomain.com/pat","AccountReference":"Test","TransactionDesc":"Test"}
 2025-03-09 21:32:29.8816 INFO Mpesa token: xcMOdgmZgtPqGv17hkMgnGEYxfwX
 2025-03-09 21:32:51.4146 INFO Mpesa STK End point: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+2025-03-09 21:33:44.6728 INFO STK payload request: {"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwMzA5MjExODMy","Timestamp":"20250309211718","TransactionType":"CustomerPayBillOnline","Amount":"1","PartyA":"254713249357","PartyB":174379,"PhoneNumber":"254713249357","CallBackURL":"https://mydomain.com/pat","AccountReference":"Test","TransactionDesc":"Test"}
+2025-03-09 22:17:59.6020 INFO Mpesa token: EQvi4o2mq4RBBJBThLyAzWbOwHwd
+2025-03-09 22:18:01.6096 INFO Mpesa STK End point: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+2025-03-09 22:18:38.6541 INFO STK payload request: {"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwMzA5MjIxODAy","Timestamp":"20250309211718","TransactionType":"CustomerPayBillOnline","Amount":"1","PartyA":"254713249357","PartyB":174379,"PhoneNumber":"254713249357","CallBackURL":"https://mydomain.com/pat","AccountReference":"Test","TransactionDesc":"Test"}
+2025-03-09 22:22:31.8843 INFO Mpesa token: ohb7bATq6SOCme4vbdsujEhlOBPc
+2025-03-09 22:26:24.9453 INFO Mpesa STK End point: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+2025-03-09 22:28:53.2461 INFO Mpesa token: qYgTNHAxfATp8e3gwZn6HFJttCy8
+2025-03-09 22:28:53.2646 INFO Mpesa STK End point: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+2025-03-09 22:28:53.3061 INFO STK payload request: {"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwMzA5MjIyODUz","Timestamp":"20250309222853","TransactionType":"CustomerPayBillOnline","Amount":"1","PartyA":"254713249357","PartyB":174379,"PhoneNumber":"254713249357","CallBackURL":"https://mydomain.com/pat","AccountReference":"Test","TransactionDesc":"Test"}
+2025-03-09 23:32:55.8658 INFO baseUrl: https://localhost:44347/api/MpesaIntergration/SubmitSTKRequest
+2025-03-09 23:33:01.5176 INFO requestBody: {
+  "amount": "1",
+  "phone_no": "254713249357"
+}
+2025-03-09 23:33:30.3438 INFO RESULT: {"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"One or more validation errors occurred.","status":400,"errors":{"jobject":["The jobject field is required."],"$.amount":["The JSON value could not be converted to Newtonsoft.Json.Linq.JToken. Path: $.amount | LineNumber: 1 | BytePositionInLine: 15."]},"traceId":"00-35d8878fc28b407942f985d0fff99620-494a9020b9743803-00"}
+2025-03-09 23:36:21.2057 INFO result_json: {
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "jobject": [
+      "The jobject field is required."
+    ],
+    "$.amount": [
+      "The JSON value could not be converted to Newtonsoft.Json.Linq.JToken. Path: $.amount | LineNumber: 1 | BytePositionInLine: 15."
+    ]
+  },
+  "traceId": "00-35d8878fc28b407942f985d0fff99620-494a9020b9743803-00"
+}

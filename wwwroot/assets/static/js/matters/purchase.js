@@ -346,6 +346,66 @@ $('#save').click(function () {
     });
 });
 
+$('#stk_payment').click(function () {
+    var a = $(this).closest(".panel");
+
+    var m_amount = document.getElementById('m_amount').value;
+    var m_mobile = document.getElementById('m_mobile').value;
+
+    var parameters = {
+        amount: m_amount,
+        mobile: m_mobile
+    };
+    console.log(parameters);
+
+    $.ajax({
+        url: "/Management/DownloadAction",
+        type: "POST",
+        data: parameters,
+        beforeSend: function () {
+            if (!$(a).hasClass("panel-loading")) {
+                var t = $(a).find(".panel-body"),
+                    i = '<div class="panel-loader"><span class="spinner-small"></span></div>';
+
+                $(a).addClass("panel-loading"), $(t).prepend(i);
+            }
+        },
+        success: function (data) {
+            $(a).removeClass("panel-loading"), $(a).find(".panel-loader").remove();
+            $("#capture-matters").modal("hide").data("bs.modal", null);
+            if (data.error_code === '00') {
+                Swal.fire({
+                    title: "Success",
+                    text: data.error_desc,
+                    icon: "success",
+                    confirmButtonText: "Ok"
+                });
+
+
+                
+
+            } else {
+                Swal.fire({
+                    title: "Failed",
+                    text: data.error_desc,
+                    icon: "error",
+                    confirmButtonText: "Ok"
+                });
+            }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            $(a).removeClass("panel-loading"), $(a).find(".panel-loader").remove();
+
+            Swal.fire({
+                title: "Failed",
+                text: "Record could not be saved " + errorThrown,
+                icon: "error",
+                confirmButtonText: "Ok"
+            });
+        }
+    });
+});
+
 $("#capture-matters").on("hidden.bs.modal", function (e) {
     $('#recordid').val("");
     $('#matter_name').val("");

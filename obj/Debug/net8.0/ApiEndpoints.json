@@ -79,14 +79,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "SHERIA.Controllers.MpesaIntergrationController\u002BB2CRequestModel",
+        "Name": "jobject",
+        "Type": "Newtonsoft.Json.Linq.JObject",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "Newtonsoft.Json.Linq.JToken",
         "MediaTypes": [
           "text/plain",
           "application/json",

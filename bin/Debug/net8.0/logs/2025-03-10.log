@@ -1,0 +1,18 @@
+2025-03-10 00:15:11.9072 INFO baseUrl: https://localhost:44347/api/MpesaIntergration/SubmitSTKRequest
+2025-03-10 00:15:16.6759 INFO requestBody: {
+  "amount": "1",
+  "phone_no": "254713249357"
+}
+2025-03-10 00:15:31.4163 INFO Mpesa token: 8K8iwYv3jvQpsbb5mBwvNEAFDocs
+2025-03-10 00:15:33.9883 INFO Mpesa STK End point: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+2025-03-10 00:15:46.7910 INFO STK payload request: {"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwMzEwMDAxNTM0","Timestamp":"20250310001534","TransactionType":"CustomerPayBillOnline","Amount":"1","PartyA":"254713249357","PartyB":174379,"PhoneNumber":"254713249357","CallBackURL":"https://mydomain.com/pat","AccountReference":"Test","TransactionDesc":"Test"}
+2025-03-10 00:16:13.5164 INFO RESULT: "{\n            \"MerchantRequestID\":\"6543-425e-a177-2e84b1462ecd1922184\",\n            \"CheckoutRequestID\":\"ws_CO_10032025001725142713249357\",\n            \"ResponseCode\": \"0\",\n            \"ResponseDescription\":\"Success. Request accepted for processing\",\n            \"CustomerMessage\":\"Success. Request accepted for processing\"\n        }\n        "
+2025-03-10 00:17:14.6331 INFO baseUrl: https://localhost:44347/api/MpesaIntergration/SubmitSTKRequest
+2025-03-10 00:17:14.6331 INFO requestBody: {
+  "amount": "1",
+  "phone_no": "254713249357"
+}
+2025-03-10 00:17:15.3930 INFO Mpesa token: tBEEre6rTkQF3Uz4XIoYtGBSDXwe
+2025-03-10 00:17:15.3930 INFO Mpesa STK End point: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+2025-03-10 00:17:15.3930 INFO STK payload request: {"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwMzEwMDAxNzE1","Timestamp":"20250310001715","TransactionType":"CustomerPayBillOnline","Amount":"1","PartyA":"254713249357","PartyB":174379,"PhoneNumber":"254713249357","CallBackURL":"https://mydomain.com/pat","AccountReference":"Test","TransactionDesc":"Test"}
+2025-03-10 00:17:15.8582 INFO RESULT: "{\n            \"MerchantRequestID\":\"5fe8-4261-87f6-6d7d41adc6c31435024\",\n            \"CheckoutRequestID\":\"ws_CO_10032025001716967713249357\",\n            \"ResponseCode\": \"0\",\n            \"ResponseDescription\":\"Success. Request accepted for processing\",\n            \"CustomerMessage\":\"Success. Request accepted for processing\"\n        }\n        "
