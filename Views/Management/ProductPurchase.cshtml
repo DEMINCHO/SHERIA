@@ -6,7 +6,7 @@
     <link href="~/assets/static/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
     <link href="~/assets/static/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
     <link href="~/assets/static/plugins/bootstrap-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
-
+   @*  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> *@
 }
 <!-- begin page-header -->
 <h1 class="page-header"><i class="fa-regular fa-book"></i> Open <small> Matters </small></h1>
@@ -23,11 +23,23 @@
         <p></p>
         @* <div class="form-horizontal">*@
         <div class="row">
-            <a id="editabledatatable_new" class="btn btn-sm btn-success" data-toggle="modal" data-target="#capture-matters">
-                <i class="fa fa-plus"></i> Issue Product
-            </a>
-            <br />
-            <br />
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <a id="editabledatatable_new" class="btn btn-sm btn-success" data-toggle="modal" data-target="#capture-matters">
+                    <i class="fa fa-plus"></i> Issue Product
+                </a>
+                <br />
+                <br />
+            </div> 
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <a id="editabledatatable_new" class="btn btn-sm btn-success" data-toggle="modal" data-target="#payment">
+                    <i class="fa fa-plus"></i> PAYMENT
+                </a>
+
+                <br />
+                <br />
+            </div>
+           
+            
         </div>
         <div class="row">
             <table id="editabledatatable" class="table table-striped table-hover table-bordered table-condensed">
@@ -40,7 +52,7 @@
                         <th style="width:auto">Quantity</th>
                         <th style="width:auto">Total Price</th>
                         <th style="width:auto"></th>
-                        <th style="width:auto"></th>
+                       @*  <th style="width:auto"></th> *@
                     </tr>
                 </thead>
             </table>
@@ -61,6 +73,7 @@
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <div class="form-group">
                                                 <input id="recordid" type="hidden" name="recordid" />
+                                                <input id="client_id" type="hidden" name="client_id" />
                                                 <label for="client_name"><b>Client Name</b></label>
                                                 <input type="text" id="client_name" name="client_name" class="form-control" />
                                             </div>
@@ -129,6 +142,48 @@
                         <div class="modal-footer">
                             <a href="#" class="btn btn-white btn-sm" id="cancel" data-dismiss="modal"><i class="fa fa-times-circle"></i>&nbsp;Cancel</a>
                             <a href="#" class="btn btn-success btn-sm" id="save"><i class="fa fa-check-circle"></i>&nbsp;Submit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="modal fade" id="payment" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
+                            <h4 class="modal-title">Make STK PUSH</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-inverse">
+                                <div class="panel-body">
+                                    <div class="card-header p-0" id="headingThree">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0 border-bottom-custom" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <span>Mpesa</span>
+                                                    <img src="~/assets/img/33.jpg" width="80">
+                                                </div>
+                                            </button>
+                                        </h2>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <input id="mpesa" type="text" class="form-control" placeholder="Amount(KES)">
+                                    </div>
+                                    <br />
+                                    <div class="card-body">
+                                        <input id="mobile" type="text" class="form-control" placeholder="Phone Number">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-white btn-sm" id="cancel" data-dismiss="modal"><i class="fa fa-times-circle"></i>&nbsp;Cancel</a>
+                            <a href="#" class="btn btn-success btn-sm" id="save"><i class="fa fa-check-circle"></i>&nbsp;PAY</a>
                         </div>
                     </div>
                 </div>

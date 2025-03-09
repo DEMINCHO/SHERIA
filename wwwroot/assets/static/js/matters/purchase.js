@@ -81,16 +81,15 @@ var InitiateEditableDataTable = function () {
                 },
                 "aoColumns": [
                     { "data": "client_name", "autoWidth": true, "sDefaultContent": "n/a" },
-                    { "data": "client_name", "autoWidth": true, "sDefaultContent": "n/a" },
+                    { "data": "product_name", "autoWidth": true, "sDefaultContent": "n/a" },
                     { "data": "start_date", "autoWidth": true, "sDefaultContent": "n/a" },
                     { "data": "end_date", "autoWidth": true, "sDefaultContent": "n/a" },
                     { "data": "quantity", "autoWidth": true, "sDefaultContent": "n/a" },
                     { "data": "price", "autoWidth": true, "sDefaultContent": "n/a" },
-
-                    {
-                        "bSortable": false,
-                        "sDefaultContent": "<a href='#' class='btn btn-info btn-xs edit'><i class='fa fa-edit'></i> Edit</a>"
-                    },
+                    //{
+                    //    "bSortable": false,
+                    //    "sDefaultContent": "<a href='#' class='btn btn-info btn-xs edit'><i class='fa fa-edit'></i> Edit</a>"
+                    //},
                     {
                         "bSortable": false,
                         "sDefaultContent": "<a href='#' class='btn btn-danger btn-xs delete'><i class='fas fa-trash-alt'></i> Delete</a>"
@@ -183,19 +182,19 @@ var InitiateEditableDataTable = function () {
                 var jqTds = $('>td', nRow);
 
                 var json = JSON.parse(JSON.stringify(aData));
-
+                console.log(json);
 
                 $('.modal-body #recordid').val($(nRow).attr("recid"));
-                $('.modal-body #matter_name').val(json["matter_name"]);
-                $('.modal-body #matter_number').val(json["matter_number"]);
-                $('.modal-body #assigned_to').val(json["assigned_to"]);
                 $('.modal-body #client_id').val(json["client_id"]);
+                $('.modal-body #client_name').val(json["client_name"]);
+                $('.modal-body #mobile').val(json["phone_number"]);
+                $('.modal-body #email').val(json["email"]);
+                $('.modal-body #id_no').val(json["id_no"]);
+                $('.modal-body #product').val(json["product_id"]).trigger("change");
+                $('.modal-body #product_total').val(json["quantity"]);
+                $('.modal-body #price').val(json["price"]);
                 $('.modal-body #start_date').val(json["start_date"]);
-                $('.modal-body #close_date').val(json["close_date"]);
-                $('.modal-body #practice_area').val(json["practice_area"]);
-                $('.modal-body #matter_status').val(json["matter_status"]);
-                $('.modal-body #matter_billing').val(json["matter_billing"]);
-                $('.modal-body #description').val(json["description"]);
+                $('.modal-body #return_date').val(json["end_date"]);
 
                 $("#capture-matters").appendTo("body").modal("show");
             }
@@ -223,11 +222,11 @@ var InitiateEditableDataTable = function () {
 
                         oTable.fnDeleteRow(nRow);
                         //Ajax to flag as deleted
-                        var parameters = { module: 'open_matters', id: rec };
+                        var parameters = { module: 'purchase_product', id: rec };
                         console.log(parameters);
                         $.ajax({
-                            url: "/Matters/Delete",
-                            type: "GET",
+                            url: "/Management/Delete",
+                            type: "POST",
                             data: parameters,
                             beforeSend: function () {
                                 if (!$(a).hasClass("panel-loading")) {
@@ -237,8 +236,6 @@ var InitiateEditableDataTable = function () {
                                     $(a).addClass("panel-loading"), $(t).prepend(i);
                                 }
                             },
-
-
                             success: function (data) {
                                 $(a).removeClass("panel-loading"), $(a).find(".panel-loader").remove();
 

@@ -146,9 +146,9 @@ var getMonthName = function (a) {
         document.getElementById('statistic_two').innerHTML = jsonapplications[0]["statistic_two"];
         document.getElementById('statistic_three').innerHTML = jsonapplications[0]["statistic_three"];
 
-        handleStatisticsDonutChart(data);
+        //handleStatisticsDonutChart(data);
 
-        handleStatisticsLineChart(data);
+       // handleStatisticsLineChart(data);
 
         handleAdminMessage(data);
     });

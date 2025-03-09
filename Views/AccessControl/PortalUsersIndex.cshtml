@@ -385,7 +385,7 @@
 
             $.ajax({
                 url: "@Url.Action("CreatePortalUser", "AccessControl")",
-                type: "GET",
+                type: "POST",
                 data: parameters,
                 beforeSend: function () {
                     if (!$(a).hasClass("panel-loading")) {

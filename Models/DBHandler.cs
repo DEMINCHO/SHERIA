@@ -485,7 +485,7 @@ namespace SHERIA.Models
             return dt;
         }
 
-        public DataTable GetRecords(string module, string param1 = "", string param2 = "")
+        public DataTable GetRecords(string module, string param1 = "", string param2 = "", string param3 = "", string param4 = "")
         {
             DataTable dt = new DataTable();
 
@@ -499,6 +499,8 @@ namespace SHERIA.Models
                 cmd.Parameters.AddWithValue("@module", module);
                 cmd.Parameters.AddWithValue("@param1", param1);
                 cmd.Parameters.AddWithValue("@param2", param2);
+                cmd.Parameters.AddWithValue("@param3", param3);
+                cmd.Parameters.AddWithValue("@param4", param4);
                 sd.Fill(dt);
             }
             catch (Exception ex)

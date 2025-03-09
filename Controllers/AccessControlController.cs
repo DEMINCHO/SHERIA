@@ -562,7 +562,7 @@ namespace SHERIA.Controllers
             }
         }
 
-        [RBAC]
+        [HttpPost]
         public ActionResult CreatePortalUser(userrecord record)
         {
             if (HttpContext.Session.GetString("name") == null)
@@ -622,7 +622,7 @@ namespace SHERIA.Controllers
                             mobile = record.mobile,
                             email = record.email,
                             name = record.name,
-                            password = Cryptographer.Encrypt(myrandomkeymanager.GenerateRandomAlphaNumericString(7)).Replace("=", ""),
+                            password = Cryptographer.Encrypt("password").Replace("=", ""),
                             locked = record.locked,
                             google_authenticate = record.google_authenticate,
                             sec_key = myrandomkeymanager.GenerateRandomAlphaNumericString(16).ToUpper(),

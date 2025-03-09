@@ -1,13 +1,7 @@
 ﻿$(document).ready(function () {
-
     App.init();
     //TableManageResponsive.init();
-
-    
-
     InitiateEditableDataTable.init();
-
-
     GetProductRecords();
     GetProductTypes();
 
@@ -23,7 +17,6 @@ var InitiateEditableDataTable = function () {
                 "createdRow": function (row, data, dataIndex) {
                     $(row).attr("recid", data.id);
                 },
-
                 "aoColumns": [
                     { "data": "name", "autoWidth": true, "sDefaultContent": "n/a" },
                     { "data": "type_name", "autoWidth": true, "sDefaultContent": "n/a" },
@@ -98,11 +91,11 @@ var InitiateEditableDataTable = function () {
 
                         oTable.fnDeleteRow(nRow);
                         //Ajax to flag as deleted
-                        var parameters = { module: 'open_matters', id: rec };
+                        var parameters = { module: 'delete_product', id: rec };
                         console.log(parameters);
                         $.ajax({
-                            url: "/Matters/Delete",
-                            type: "GET",
+                            url: "/Management/Delete",
+                            type: "POST",
                             data: parameters,
                             beforeSend: function () {
                                 if (!$(a).hasClass("panel-loading")) {
@@ -112,8 +105,6 @@ var InitiateEditableDataTable = function () {
                                     $(a).addClass("panel-loading"), $(t).prepend(i);
                                 }
                             },
-
-
                             success: function (data) {
                                 $(a).removeClass("panel-loading"), $(a).find(".panel-loader").remove();
 
@@ -123,7 +114,7 @@ var InitiateEditableDataTable = function () {
                                     icon: "success",
                                     confirmButtonText: "Ok"
                                 });
-                                GetTopics();
+                                GetProductRecords();
                             },
                             error: function (xhr, textStatus, errorThrown) {
                                 $(a).removeClass("panel-loading"), $(a).find(".panel-loader").remove();

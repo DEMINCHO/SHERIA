@@ -33,29 +33,12 @@
                         <tr role="row">
                             <th style="width:auto">Name</th>
                             <th style="width:auto"></th>
-                            <th style="width:auto"></th>
                         </tr>
                     </thead>
                 </table>
             </div>
             <div id="builder">
             </div>
-            <!--<div class="row">
-        <div class="panel panel-inverse">
-            <div class="panel-heading">
-                <div class="panel-heading-btn">
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
-                </div>
-                <h4 class="panel-title"><span class="widget-caption" id="selectedreport">No Report Selected</span></h4>
-            </div>
-            <div class="panel-body">
-                <iframe id="iframe" onload="this.height=this.contentWindow.document.body.scrollHeight;" style="width:100%" frameBorder="0"></iframe>
-            </div>
-        </div>
-    </div>-->
             <div class="row">
                 <div class="form-group">
                     <div class="modal fade" id="capture-report" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -135,15 +118,6 @@
                                       /*return "<a href='#' class='btn btn-info btn-xs report-parameters'><i class='fa fa-filter'></i> Add Filter</a> " +
                                              "<a href='#' class='btn btn-success btn-xs view-report'><i class='fa fa-file-pdf-o'></i> View Report</a>"*/
                                       return "<a href='#' class='btn btn-success btn-xs export-report'><i class='fa fa-file-pdf-o'></i> Export Report</a>"
-                                  }
-                              },
-                              {
-                                  "sName": "id",
-                                  "bSearchable": false,
-                                  "bSortable": false,
-                                  "mRender": function (data, type, full) {
-                                      return "<a href='#' class='btn btn-warning btn-xs edit'><i class='fa fa-edit'></i> Edit</a> " +
-                                             "<a href='#' class='btn btn-danger btn-xs delete'><i class='fas fa-trash-alt'></i> Delete</a>"
                                   }
                               }
                             ]

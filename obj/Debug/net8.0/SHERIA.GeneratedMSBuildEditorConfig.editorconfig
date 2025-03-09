@@ -1,0 +1,143 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SHERIA
+build_property.RootNamespace = SHERIA
+build_property.ProjectDir = C:\WorkOuts\sheria-project\SHERIA.WEB\SHERIA\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\WorkOuts\sheria-project\SHERIA.WEB\SHERIA
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/AccessControl/MenuAccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxNZW51QWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/AccessControl/Permissions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxQZXJtaXNzaW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/AccessControl/PortalUserRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxQb3J0YWxVc2VyUm9sZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/AccessControl/PortalUsersIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxQb3J0YWxVc2Vyc0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/AccessControl/PortalUsersUnapproved.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxQb3J0YWxVc2Vyc1VuYXBwcm92ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/AccessControl/RolePermissions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxSb2xlUGVybWlzc2lvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/AccessControl/RolesIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxSb2xlc0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/AccessControl/RolesUnapproved.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxSb2xlc1VuYXBwcm92ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/AppAuth/AdminLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwQXV0aFxBZG1pbkxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/AppAuth/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwQXV0aFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/ClientManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50TWFuYWdlbWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/ClientManagement/Onboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50TWFuYWdlbWVudFxPbmJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Management/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlbWVudFxQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Management/ProductPurchase.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlbWVudFxQcm9kdWN0UHVyY2hhc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/ReportCentral/ReportList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0Q2VudHJhbFxSZXBvcnRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Settings/EmailTemplateParams.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcRW1haWxUZW1wbGF0ZVBhcmFtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Settings/EmailTemplates.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcRW1haWxUZW1wbGF0ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Settings/Parameters.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcUGFyYW1ldGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Shared/_Alerts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BbGVydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/TasksManagement/TaskCalender.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza3NNYW5hZ2VtZW50XFRhc2tDYWxlbmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/TasksManagement/TaskRecord.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza3NNYW5hZ2VtZW50XFRhc2tSZWNvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Unauthorised/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5hdXRob3Jpc2VkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/UserProfile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WorkOuts/sheria-project/SHERIA.WEB/SHERIA/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-whecfrl0de

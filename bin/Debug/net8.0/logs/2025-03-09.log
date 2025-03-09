@@ -1,0 +1,8 @@
+2025-03-09 21:30:53.1450 INFO Mpesa token: OAT9EMMCfXLeZ7oAgRxylo2gs9Ox
+2025-03-09 21:30:57.5601 INFO Mpesa STK End point: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+2025-03-09 21:31:03.1395 INFO STK payload request: {"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwMzA5MjExODMy","Timestamp":"20250309211718","TransactionType":"CustomerPayBillOnline","Amount":"1","PartyA":"254713249357","PartyB":174379,"PhoneNumber":"254713249357","CallBackURL":"https://mydomain.com/pat","AccountReference":"Test","TransactionDesc":"Test"}
+2025-03-09 21:32:16.4489 INFO Mpesa token: HchqYlQlkP1zeQ5gBNG3VfLGe9WX
+2025-03-09 21:32:16.4489 INFO Mpesa STK End point: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+2025-03-09 21:32:16.4489 INFO STK payload request: {"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwMzA5MjExODMy","Timestamp":"20250309211718","TransactionType":"CustomerPayBillOnline","Amount":"1","PartyA":"254713249357","PartyB":174379,"PhoneNumber":"254713249357","CallBackURL":"https://mydomain.com/pat","AccountReference":"Test","TransactionDesc":"Test"}
+2025-03-09 21:32:29.8816 INFO Mpesa token: xcMOdgmZgtPqGv17hkMgnGEYxfwX
+2025-03-09 21:32:51.4146 INFO Mpesa STK End point: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest

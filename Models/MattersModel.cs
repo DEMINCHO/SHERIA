@@ -21,7 +21,7 @@
         public Int64 id { set; get; }
         public string? name { set; get; }
         public Int64 type { set; get; }
-        public string? total { set; get; }
+        public Int64 total { set; get; }
         public string? price { set; get; }
     }
 }

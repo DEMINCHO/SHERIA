@@ -1,6 +1,8 @@
 using NLog;
+using OfficeOpenXml;
 using SHERIA.Helpers;
 using SHERIA.Models;
+using SHERIA.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,11 @@ builder.Services.AddSession(options => {
     options.Cookie.IsEssential = true;
 });
 builder.Services.AddScoped<ILoggerManager, LoggerManager>();
+builder.Services.AddHttpClient();
+
+// Set EPPlus License Context
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+SD.mpesa = builder.Configuration["ServiceUrls:mpesaAPI"];
 
 var app = builder.Build();
 

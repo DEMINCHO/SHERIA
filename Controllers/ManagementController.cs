@@ -43,7 +43,7 @@ namespace SHERIA.Controllers
             public Int64 id { set; get; }
             public string? name { set; get; }
             public Int64 type { set; get; }
-            public string? total { set; get; }
+            public Int64 total { set; get; }
             public string? price { set; get; }
         }
 
@@ -229,7 +229,7 @@ namespace SHERIA.Controllers
             return dbhandler.AddAuditTrail(audittrailmodel);
         }
 
-        [RBAC]
+        [HttpPost]
         public ActionResult Delete(/*[FromBody] JObject jobject*/ int id, string module)
         {
 
@@ -239,15 +239,15 @@ namespace SHERIA.Controllers
             {
                 switch (module)
                 {
-                    //case "open_matters":
-                    //    MattersModel mattermodel = dbhandler.GetMattersRecord().Find(mymodel => mymodel.id == id)!;
-                    //    if (mattermodel != null)
-                    //    {
-                    //        dbhandler.DeleteRecord(id, Convert.ToInt16(HttpContext.Session.GetString("userid")), module);
-                    //        CaptureAuditTrail("Deleted partner", "Deleted partner: " + mattermodel.matter_number);
-                    //    }
-                    //    break;
-                    
+                    case "delete_product":
+
+                        dbhandler.DeleteRecord(id, Convert.ToInt16(HttpContext.Session.GetString("userid")), module);
+                        break;
+                    case "purchase_product":
+
+                        dbhandler.DeleteRecord(id, Convert.ToInt16(HttpContext.Session.GetString("userid")), module);
+                        break;
+
 
                     default:
                         break;

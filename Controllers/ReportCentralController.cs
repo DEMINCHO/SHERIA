@@ -41,7 +41,7 @@ namespace SHERIA.Controllers
             dbhandler = mydbhandler;
         }
 
-        [RBAC]
+        
         public ActionResult ReportList()
         {
             if (HttpContext.Session.GetString("name") == null)

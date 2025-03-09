@@ -37,7 +37,7 @@
         public string? email { get; set; }
         public string? id_no { get; set; }
         public Int64 product { get; set; }
-        public string? product_total { get; set; }
+        public Int64 product_total { get; set; }
         public string? price { get; set; }
         public string? start_date { get; set; }
         public string? return_date { get; set; }

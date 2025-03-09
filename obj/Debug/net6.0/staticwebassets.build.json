@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+QmEvbacXsjQfEtwoSbuS1rr8PF6El2Djr0kp8dlU3A=",
+  "Hash": "q54fbfEhKWrMpFMG/8e00zQXqZmYmcZ+Zq0EAWuUhkQ=",
   "Source": "SHERIA",
   "BasePath": "_content/SHERIA",
   "Mode": "Default",
@@ -3739,6 +3739,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\2.jpg"
+    },
+    {
+      "Identity": "C:\\WorkOuts\\sheria-project\\SHERIA.WEB\\SHERIA\\wwwroot\\assets\\img\\33.jpg",
+      "SourceId": "SHERIA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\WorkOuts\\sheria-project\\SHERIA.WEB\\SHERIA\\wwwroot\\",
+      "BasePath": "_content/SHERIA",
+      "RelativePath": "assets/img/33.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\33.jpg"
     },
     {
       "Identity": "C:\\WorkOuts\\sheria-project\\SHERIA.WEB\\SHERIA\\wwwroot\\assets\\img\\4.jpg",
