@@ -844,6 +844,36 @@ namespace SHERIA.Models
                 return false;
             }
         }
+        
+        public bool UpdateProductPurchase(ProductpurchaseModel model)
+        {
+            try
+            {
+                int i = 0;
+                using (SqlConnection connect = new SqlConnection(GetDataBaseConnection(DataBaseObject.HostDB)))
+                {
+                    using SqlCommand cmd = new SqlCommand("update_Purchases", connect);
+                    connect.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", model.id);
+                    cmd.Parameters.AddWithValue("@return_quantity", model.return_quantity);
+                    cmd.Parameters.AddWithValue("@actual_return_date", model.actual_return_date);
+                    cmd.Parameters.AddWithValue("@return_condition", model.return_condition);
+                    cmd.Parameters.AddWithValue("@return_notes", model.return_notes);
+                    i = (int)cmd.ExecuteNonQuery();
+                }
+
+                if (i >= 1)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                FileLogHelper.log_message_fields("ERROR", "UpdateRole | Exception ->" + ex.Message);
+                return false;
+            }
+        }
         //End Roles
 
         //Role Menu Access

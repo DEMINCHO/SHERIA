@@ -1,4 +1,4 @@
-﻿@section PageStyles{
+﻿@section PageStyles {
     <link href="~/assets/static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
     <link href="~/assets/static/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" />
     <link href="~/assets/static/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
@@ -6,7 +6,7 @@
     <link href="~/assets/static/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
     <link href="~/assets/static/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
     <link href="~/assets/static/plugins/bootstrap-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
-   @*  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> *@
+    @*  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> *@
 }
 <!-- begin page-header -->
 <h1 class="page-header"><i class="fa-regular fa-book"></i> Open <small> Matters </small></h1>
@@ -21,20 +21,25 @@
     </div>
     <div class="panel-body">
         <p></p>
-        @* <div class="form-horizontal">*@
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-4 col-xs-12">
                 <a id="editabledatatable_new" class="btn btn-sm btn-success" data-toggle="modal" data-target="#capture-matters">
                     <i class="fa fa-plus"></i> Issue Product
                 </a>
                 <br />
                 <br />
-            </div> 
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <a id="editabledatatable_new" class="btn btn-sm btn-success" data-toggle="modal" data-target="#payment">
-                    <i class="fa fa-plus"></i> PAYMENT
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <a id="editabledatatable_new" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#payment">
+                    <i class="fa fa-credit-card"></i> PAYMENT
                 </a>
-
+                <br />
+                <br />
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <a id="editabledatatable_new" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#return-product-bulk">
+                    <i class="fa fa-undo"></i> Return Products
+                </a>
                 <br />
                 <br />
             </div>
@@ -50,20 +55,21 @@
                         <th style="width:auto">Return Date</th>
                         <th style="width:auto">Quantity</th>
                         <th style="width:auto">Total Price</th>
-                        <th style="width:auto"></th>
-                       @*  <th style="width:auto"></th> *@
+                        <th style="width:auto">Status</th>
+                        <th style="width:auto">Action</th>
                     </tr>
                 </thead>
             </table>
         </div>
 
+        <!-- Issue Product Modal -->
         <div class="row">
             <div class="modal fade" id="capture-matters" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
-                            <h4 class="modal-title">Start New Matter</h4>
+                            <h4 class="modal-title">Issue Product</h4>
                         </div>
                         <div class="modal-body">
                             <div class="panel panel-inverse">
@@ -99,7 +105,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row">
                                         <h4><b>2. Product Sale</b></h4>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
@@ -113,13 +119,13 @@
                                                 <label for="product_total"><b>Products Number</b></label>
                                                 <input type="text" id="product_total" name="product_total" class="form-control" />
                                             </div>
-                                        </div> 
+                                        </div>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
                                             <div class="form-group">
                                                 <label for="price"><b>Total Price</b></label>
                                                 <input type="text" id="price" name="price" class="form-control" />
                                             </div>
-                                        </div> 
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 col-sm-4 col-xs-12">
@@ -135,7 +141,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -147,14 +152,15 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- Payment Modal -->
         <div class="row">
             <div class="modal fade" id="payment" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
-                            <h4 class="modal-title">Make STK PUSH</h4>
+                            <h4 class="modal-title">Make Payment</h4>
                         </div>
                         <div class="modal-body">
                             <div class="panel panel-inverse">
@@ -177,27 +183,238 @@
                                     <div class="card-body">
                                         <input id="m_mobile" type="text" class="form-control" placeholder="Phone Number">
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <a href="#" class="btn btn-white btn-sm" id="cancel" data-dismiss="modal"><i class="fa fa-times-circle"></i>&nbsp;Cancel</a>
-                            <a href="#" class="btn btn-success btn-sm" id="stk_payment"><i class="fa fa-check-circle"></i>&nbsp;PAY</a>
+                            <a href="#" class="btn btn-primary btn-sm" id="stk_payment"><i class="fa fa-credit-card"></i>&nbsp;Process Payment</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        @*</div>*@
+
+        <!-- Return Product Modal -->
+        <div class="row">
+            <div class="modal fade" id="return-product" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
+                            <h4 class="modal-title">Return Product</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-inverse">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <input id="return_record_id" type="hidden" name="return_record_id" />
+                                                <label for="return_client_name"><b>Client Name</b></label>
+                                                <input type="text" id="return_client_name" name="return_client_name" class="form-control" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="return_product_name"><b>Product Name</b></label>
+                                                <input type="text" id="return_product_name" name="return_product_name" class="form-control" readonly />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="return_quantity"><b>Quantity to Return</b></label>
+                                                <input type="number" id="return_quantity" name="return_quantity" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="actual_return_date"><b>Return Date</b></label>
+                                                <input type="text" id="actual_return_date" name="actual_return_date" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="return_condition"><b>Product Condition</b></label>
+                                                <select id="return_condition" name="return_condition" class="form-control">
+                                                    <option value="Good">Good</option>
+                                                    <option value="Damaged">Damaged</option>
+                                                    <option value="Needs Repair">Needs Repair</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="return_notes"><b>Notes</b></label>
+                                                <textarea id="return_notes" name="return_notes" class="form-control" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-white btn-sm" id="cancel_return" data-dismiss="modal"><i class="fa fa-times-circle"></i>&nbsp;Cancel</a>
+                            <a href="#" class="btn btn-success btn-sm" id="save_return"><i class="fa fa-check-circle"></i>&nbsp;Process Return</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Return Details Modal -->
+        <div class="row">
+            <div class="modal fade" id="return-details" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
+                            <h4 class="modal-title">Return Details</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-inverse">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label><b>Client Name</b></label>
+                                                <p id="detail_client_name" class="form-control-static"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label><b>Product Name</b></label>
+                                                <p id="detail_product_name" class="form-control-static"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <label><b>Original Quantity</b></label>
+                                                <p id="detail_original_quantity" class="form-control-static"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <label><b>Returned Quantity</b></label>
+                                                <p id="detail_returned_quantity" class="form-control-static"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <label><b>Return Date</b></label>
+                                                <p id="detail_return_date" class="form-control-static"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label><b>Product Condition</b></label>
+                                                <p id="detail_condition" class="form-control-static"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label><b>Processed By</b></label>
+                                                <p id="detail_processed_by" class="form-control-static"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label><b>Notes</b></label>
+                                                <p id="detail_notes" class="form-control-static"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-primary btn-sm" data-dismiss="modal"><i class="fa fa-check-circle"></i>&nbsp;Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bulk Return Product Modal -->
+        <div class="row">
+            <div class="modal fade" id="return-product-bulk" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
+                            <h4 class="modal-title">Bulk Return Products</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-inverse">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="bulk_client"><b>Select Client</b></label>
+                                                <select id="bulk_client" name="bulk_client" class="form-control selectpicker" style="width: 100%"></select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="bulk_return_date"><b>Return Date</b></label>
+                                                <input type="text" id="bulk_return_date" name="bulk_return_date" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4><b>Products to Return</b></h4>
+                                            <table id="client_products" class="table table-striped table-hover table-bordered table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Product</th>
+                                                        <th>Assigned Quantity</th>
+                                                        <th>Return Quantity</th>
+                                                        <th>Condition</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- Will be populated dynamically -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="bulk_return_notes"><b>Notes</b></label>
+                                                <textarea id="bulk_return_notes" name="bulk_return_notes" class="form-control" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-white btn-sm" id="cancel_bulk_return" data-dismiss="modal"><i class="fa fa-times-circle"></i>&nbsp;Cancel</a>
+                            <a href="#" class="btn btn-success btn-sm" id="save_bulk_return"><i class="fa fa-check-circle"></i>&nbsp;Process Returns</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <hr>
     </div>
     <!-- end panel-body -->
 </div>
-
 <!-- end panel -->
-
-@section PageScripts{
+@section PageScripts {
     <script src="~/assets/static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script src="~/assets/static/plugins/select2/dist/js/select2.min.js"></script>
     <script src="~/assets/static/plugins/dataTables/media/js/jquery.dataTables.js"></script>
@@ -208,5 +425,4 @@
     <script src="~/assets/static/js/apps.min.js"></script>
     <script src="~/assets/static/js/jquery.blockUI.js"></script>
     <script src="~/assets/static/js/matters/purchase.js"></script>
-
 }

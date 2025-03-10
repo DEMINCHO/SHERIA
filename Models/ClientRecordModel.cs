@@ -42,5 +42,9 @@
         public string? start_date { get; set; }
         public string? return_date { get; set; }
         public Int64 created_by { get; set; }
+        public Int64 return_quantity { get; set; }
+        public DateTime actual_return_date { get; set; }
+        public string? return_condition { get; set; }
+        public string? return_notes { get; set; }
     }
 }

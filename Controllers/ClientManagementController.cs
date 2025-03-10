@@ -58,6 +58,12 @@ namespace SHERIA.Controllers
             public string? price { get; set; }
             public string? start_date { get; set; }
             public string? return_date { get; set; }
+            public Int64 return_quantity { get; set; }
+            public DateTime actual_return_date { get; set; }
+            public string? return_condition { get; set; }
+            public string? return_notes { get; set; }
+
+
         }
         public class processingresponse
         {
@@ -132,15 +138,62 @@ namespace SHERIA.Controllers
 
                     }
                 }
-
             }
-
             catch (Exception ex)
             {
 
                 iloggermanager.LogError(ex.Message);
                 response.error_code = "01";
                 response.error_desc = "Could not create client, kindly contact system admin";
+            }
+
+            return Content(JsonConvert.SerializeObject(response, Formatting.Indented), "application/json");
+
+        } 
+        
+        [HttpPost]
+        public ActionResult ReturnProduct(productpurchaserecord record)
+        {
+            ArrayList details = new ArrayList();
+            processingresponse response = new processingresponse
+            {
+                system_ref = DateTime.Now.ToString("yyyyMMddHHmmssfff")
+            };
+
+            try
+            {
+                //var user = HttpContext.Session.GetString("userid");
+                ProductpurchaseModel clientModel = new()
+                {
+                    id = record.id,
+                    return_quantity = record.return_quantity,
+                    actual_return_date = record.actual_return_date,
+                    return_condition = record.return_condition,
+                    return_notes = record.return_notes,
+                };
+
+                if (dbhandler.UpdateProductPurchase(clientModel))
+                {
+                    ModelState.Clear();
+                    response.error_code = "00";
+                    response.error_desc = "Successfully Returned";
+                    return Content(JsonConvert.SerializeObject(response, Formatting.Indented), "application/json");
+                }
+                else
+                {
+                    ModelState.Clear();
+                    response.error_code = "01";
+                    response.error_desc = "Failed to Update Return";
+                    return Content(JsonConvert.SerializeObject(response, Formatting.Indented), "application/json");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                iloggermanager.LogError(ex.Message);
+                response.error_code = "01";
+                response.error_desc = "Could not create client, kindly contact system admin";
+                return Content(JsonConvert.SerializeObject(response, Formatting.Indented), "application/json");
             }
 
             return Content(JsonConvert.SerializeObject(response, Formatting.Indented), "application/json");

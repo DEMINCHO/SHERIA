@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SHERIA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4e9ee1c294e56f0ae9ea5291777a9cdf1760595")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eaf51b1710f4700cb761e16f4c2857c48ce4b74d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SHERIA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SHERIA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
